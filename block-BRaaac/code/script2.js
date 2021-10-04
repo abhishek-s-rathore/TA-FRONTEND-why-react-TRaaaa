@@ -19,12 +19,15 @@ function handleDelete(event) {
 }
 
 // Create Element Function
-function elem(type, attr = {}, ...childern) {
+function createElm(type, attr = {}, ...childern) {
   let element = document.createElement(type);
 
   for (let key in attr) {
     if (key.startsWith('data-')) {
       element.setAttribute(key, attr[key]);
+    } else if (key.startsWith('on')) {
+      let eventType = key.replace('on', '').toLowerCase();
+      element.addEventListener(eventType, attr[key]);
     } else {
       element[key] = attr[key];
     }
@@ -45,24 +48,35 @@ function elem(type, attr = {}, ...childern) {
 function displayMovies(moviesArr = []) {
   root.innerHTML = '';
   moviesArr.forEach((elm, index) => {
-    let toggle = elem('span', {
-      'data-id': index,
-      innerText: elm.isWached ? 'Watched' : 'To Watched',
-    });
-    toggle.addEventListener('click', handleToggle);
-    let dlt = elem('span', {
-      'data-id': index,
-      innerText: 'Remove',
-    });
-    dlt.addEventListener('click', handleDelete);
+    var li = createElm(
+      'li',
+      {
+        className: 'flex-1',
+      },
 
-    let li = elem('li', {
-      className: 'flex-1',
-    });
-    let movieName = elem('p', { className: 'name' });
-    movieName.innerText = elm.name;
-    let options = elem('p', {}, toggle, dlt);
-    li.append(movieName, options);
+      createElm('p', {
+        className: 'name',
+        innerText: elm.name,
+      }),
+
+      createElm(
+        'p',
+        {},
+
+        createElm('span', {
+          'data-id': index,
+          innerText: elm.isWached ? 'Watched' : 'To Watched',
+          onClick: handleToggle,
+        }),
+
+        createElm('span', {
+          'data-id': index,
+          innerText: 'Remove',
+          onClick: handleDelete,
+        })
+      )
+    );
+
     root.append(li);
   });
 }
