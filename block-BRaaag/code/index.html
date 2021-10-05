@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title-->
+    <title>Movie Watch List</title>
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="./style.css" />
+    <!--Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/5cc6fb9f6b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--Main-->
+    <main>
+      <h1>Movie Watch List</h1>
+      <input type="text" placeholder="Enter the movie name...." />
+      <ul></ul>
+    </main>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      let input = document.querySelector('input');
+      let root = document.querySelector('ul');
+
+      // State to store movies
+      let moviesList = [];
+
+      // Handle Delete
+      function handleDelete(event) {
+        var id = event.target.dataset.id;
+        moviesList.splice(id, 1);
+        displayMovies(moviesList, root);
+      }
+
+      // Handle Toggle
+      function handleToggle(event) {
+        var id = event.target.dataset.id;
+        moviesList[id].isWatched = !moviesList[id].isWatched;
+        displayMovies(moviesList, root);
+      }
+
+      // Display movies list
+      function displayMovies(moviesList = [], list) {
+        let ui = moviesList.map((movie, index) => {
+          return (
+            <li className="flex-1">
+              <p className="name">{movie.name}</p>
+              <p>
+                <span data-id={index} onClick={handleToggle}>
+                  {movie.isWatched ? 'Watched' : 'To Watch'}
+                </span>
+                <span data-id={index} onClick={handleDelete}>
+                  Remove
+                </span>
+              </p>
+            </li>
+          );
+        });
+        ReactDOM.render(ui, list);
+      }
+
+      // Haandling Input
+      input.addEventListener('keyup', (event) => {
+        if (event.keyCode === 13 && event.target.value) {
+          moviesList.push({
+            name: event.target.value,
+            isWatched: false,
+          });
+          event.target.value = '';
+          displayMovies(moviesList, root);
+        }
+      });
+
+      // Display movie list on load
+      displayMovies(moviesList, root);
+    </script>
+  </body>
+</html>
