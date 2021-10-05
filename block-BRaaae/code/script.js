@@ -1,6 +1,5 @@
 var input = document.querySelector('input');
 var root = document.querySelector('ul');
-var createElm = React.createElement;
 
 // State to store mpvies
 var moviesList = [];
@@ -19,62 +18,45 @@ function handleDelete(event) {
   displayMovies(moviesList);
 }
 
-// Create Element Function
-// function createElm(type, attr = {}, ...childern) {
-//   let element = document.createElement(type);
-
-//   for (let key in attr) {
-//     if (key.startsWith('data-')) {
-//       element.setAttribute(key, attr[key]);
-//     } else if (key.startsWith('on')) {
-//       let eventType = key.replace('on', '').toLowerCase();
-//       element.addEventListener(eventType, attr[key]);
-//     } else {
-//       element[key] = attr[key];
-//     }
-//   }
-
-//   childern.forEach((child) => {
-//     if (typeof child === 'object') {
-//       element.append(child);
-//     } else if (typeof child === 'string') {
-//       let node = document.createTextNode('child');
-//       element.append(node);
-//     }
-//   });
-//   return element;
-// }
-
 // Display Movies
 function displayMovies(moviesArr = []) {
   // root.innerHTML = '';
   let ui = moviesArr.map((elm, index) => {
-    var li = createElm(
+    var li = React.createElement(
       'li',
       {
         className: 'flex-1',
       },
 
-      createElm('p', {
-        className: 'name',
-        innerText: elm.name,
-      }),
+      React.createElement(
+        'p',
+        {
+          className: 'name',
+        },
+        elm.name
+      ),
 
-      createElm(
+      React.createElement(
         'p',
         {},
 
-        createElm('span', {
-          'data-id': index,
-          innerText: elm.isWached ? 'Watched' : 'To Watched',
-          onClick: handleToggle,
-        }),
+        React.createElement(
+          'span',
+          {
+            'data-id': index,
+            onClick: handleToggle,
+          },
+          elm.isWached ? 'Watched' : 'To Watched'
+        ),
 
-        createElm('span', {
-          'data-id': index,
-          innerText: 'Remove',
-          onClick: handleDelete,
-        })
+        React.createElement(
+          'span',
+          {
+            'data-id': index,
+            onClick: handleDelete,
+          },
+          'Remove'
+        )
       )
     );
     return li;
