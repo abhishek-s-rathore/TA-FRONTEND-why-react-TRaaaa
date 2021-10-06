@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title-->
+    <title>Articles</title>
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!--Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/5cc6fb9f6b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--Main-->
+    <header>
+      <h1>All Articles</h1>
+      <p>Collection of best articles on Stratups</p>
+    </header>
+    <main></main>
+    <script type="text/babel">
+      let main = document.querySelector('main');
+
+      //   Components
+      let Card = (props) => {
+        return (
+          <div className="card flex-32">
+            <article>
+              <div className="imgBox">
+                <img
+                  className="full-width"
+                  src="https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                  alt="Marusthal"
+                />
+
+                <div className="photos">PHOTOS</div>
+                <div className="date">
+                  <p>27</p>MAR
+                </div>
+              </div>
+              <div>
+                <h2>{props.name}</h2>
+                <q>The city that never sleeps.</q>
+                <p>
+                  New York, the largest city in the U.S., is an architectural
+                  marvel with plenty of historic monuments, magnificent
+                  buildings and countless dazzling skyscrapers.
+                </p>
+              </div>
+              <div>
+                <span>
+                  <i class="far fa-clock"></i> 6 minutes ago{' '}
+                </span>
+                <span>
+                  <i class="fas fa-comments"></i> 39 comments
+                </span>
+              </div>
+            </article>
+          </div>
+        );
+      };
+
+      let cards = (
+        <>
+          <Card name="City Lights in New York" />
+          <Card name="Mumbai the city of Dreams" />
+          <Card name="Kashmir Heaven on Earth" />
+        </>
+      );
+
+      ReactDOM.render(cards, main);
+    </script>
+  </body>
+</html>
