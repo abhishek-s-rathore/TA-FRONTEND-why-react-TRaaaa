@@ -7,7 +7,7 @@ function App(){
         <Button label="Click Me!" type="primary" size="medium"/>
         <Button label="Click Me!" type="secondary" size="small"/>
         <Button label="Click Me!"/>
-        <Button type="secondary" onClickHandler={()=>alert('You clicked me!')}/>
+        <Button disabled type="secondary" onClickHandler={()=>alert('You clicked me!')}/>
         </>
    )
 };

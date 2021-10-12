@@ -15,7 +15,7 @@ function getButtonStyle(props){
 
 function Button(props){
   return (
-        <button onClick={props.onClickHandler } className={getButtonStyle(props)}> {props.label|| "Button" }</button>
+        <button onClick={props.onClickHandler } disabled={props.disabled} className={getButtonStyle(props)}> {props.label|| "Button" }</button>
   );
 }
 
