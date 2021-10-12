@@ -43,25 +43,28 @@ button:hover{
    border-radius: .2rem;
 }
 
-.button-secondary{
-    color:  rgb(8,0,134);
-    background-color: white;
-    border: 2px solid rgb(8,0,134);
-    border-radius: .2rem;
-}
-
-
-.button-primary-disabled{
-    background-color:  gray;
-    color: white;
-    border:none;
-    border-radius: .2rem;
- }
-
-
 .button-secondary-disabled{
     color:  gray;
     background-color: white;
     border: 2px solid gray; 
     border-radius: .2rem;
+}
+
+
+/* Disabling */
+.button-primary:disabled,
+.button-primary:disabled:hover,
+.buttonprimary:disabled:focus,
+.button-secondary:disabled,
+.button-secondary:disabled:hover,
+.button-secondary:disabled:focus{
+  cursor: not-allowed;
+}
+
+.button-secondary:disabled,
+.button-secondary:disabled:hover,
+.button-secondary:disabled:focus {
+  background: none;
+  color: gray;
+  border-color: gray;
 }
