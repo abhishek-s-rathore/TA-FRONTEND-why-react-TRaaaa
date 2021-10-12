@@ -27,8 +27,10 @@
     <!-- Script -->
     <script type="text/babel">
       let root = document.getElementById('root');
-        // Header
-         let Header = (
+      
+    // Header
+   function Header(){
+        return(
             <header className="navbar">
       <div className="container flex">
         <div className="flex">
@@ -73,9 +75,13 @@
         </nav>
       </div>
     </header>
-         );
+        );
+   }
+
+
 // Hero
-let Hero = (
+   function Hero(){
+       return (
     <section className="hero">
         <div className="container flex">
           <div className="flex-48 hero-content">
@@ -102,10 +108,12 @@ let Hero = (
           </figure>
         </div>
       </section>
-);
+)
+};
 
 // About
-  let About = (
+function About(){
+    return(
 
     <section className="about padding">
         <div className="container flex align-start">
@@ -168,10 +176,11 @@ let Hero = (
           </div>
         </div>
       </section>
-  );
+  )};
 
 //   Blog
- let Blog= (
+ function Blog(){
+     return(
     <section className="blog padding">
         <div className="container">
           <header className="sec-header text-center">
@@ -263,10 +272,11 @@ let Hero = (
         </div>
       </section>
 
- );
+ )};
 
 //  Work
-  let Work = (
+  function Work(){ 
+      return(
     <section className="work padding">
         <div className="container">
           <header className="sec-header text-center">
@@ -309,10 +319,11 @@ let Hero = (
           </div>
         </div>
       </section>
-  );
+  )};
 
 //   Contact
-let Contact = (
+function Contact(){
+    return (
     <section className="contact padding">
         <div className="container">
           <header className="sec-header text-center">
@@ -380,11 +391,12 @@ let Contact = (
           </div>
         </div>
       </section>
-);
+)};
 
 // Footer
-let Footer = (
-    <footer className="footer padding">
+function Footer(){
+
+  return(  <footer className="footer padding">
       <div className="container">
         <div className="flex align-start">
           <div className="flex-40">
@@ -462,29 +474,26 @@ let Footer = (
         </div>
       </div>
     </footer>
-);
+)};
 
 
 
-
-          let Home =(
-          [   
-          Header,
-            Hero,
-            About,
-            Blog,  
-            Work,
-             Contact,
-            Footer
-           
-           
-          
-           
-          ]
-          );
-       
+            function App(){
+                return<>
+                <Header/>
+                    <main>
+                    <Hero/>
+                    <Contact/>
+                    <About/>
+                    <Blog/>
+                    <Work/>
+                    </main>
+                    <Footer/>
+                </>;
+                
+            }
     
-      ReactDOM.render(Home, root);
+    ReactDOM.render(<App/>, root);
     </script>
 </body>
 </html>
