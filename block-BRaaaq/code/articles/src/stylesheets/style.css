@@ -1,0 +1,95 @@
+@import url('./reset.css');
+
+/* Custom Styles */
+
+/* General */
+.container{
+    max-width: 1480px;
+    width:100%;
+    margin: 0 auto;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-2{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+li a{
+    margin-left: 1rem;
+    text-decoration: none;
+    color:black;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Header */
+.logo{
+   font-size: 2rem;
+   font-weight: 600;
+   color:red;
+}
+
+.header{
+    padding: 1rem;
+}
+
+
+/* Hero */
+.hero{
+    height: 40vh;
+    border: 2px solid rgb(150, 60, 60);
+    overflow: hidden;
+}
+
+.full-width{
+    width: 100%;
+    object-fit: cover;
+    height: 40vh;
+}
+
+/* Articles */
+.card{
+    flex: 0 1 30%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid rgb(150, 60, 60);
+}
+
+h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: .5rem;
+    padding-left: .25rem;
+}
+p{
+    padding-left: .35rem;
+    padding-bottom: .5rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+span{
+    margin-right: 2rem;
+    color: rgb(70, 70, 70);
+}
+
+cite{
+    color:rgb(221, 75, 75);
+}
+
+/* Footer */
+footer{
+    background-color: rgb(143, 84, 84);
+}
+
+.footer{
+    padding: 1rem;
+    margin-top: 1rem;
+}
