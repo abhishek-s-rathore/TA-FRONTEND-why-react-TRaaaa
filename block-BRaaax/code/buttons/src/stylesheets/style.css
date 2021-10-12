@@ -1,0 +1,67 @@
+@import url('./reset.css');
+
+/* Custom Styles */
+
+html{
+    font-size: 16px;
+}
+
+#root{
+    padding: 1rem;
+   text-align: center;
+}
+
+button{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+button:hover{
+   cursor: pointer;
+}
+
+.button-small{
+    padding: .45rem 1rem;
+    font-size: 1rem;
+}
+
+.button-medium{
+    padding: .55rem 1.5rem;
+    font-size: 1.2rem;
+}
+
+.button-large{
+    padding: .7rem 2rem;
+    font-size: 1.4rem;
+}
+
+.button-primary{
+   background-color:  rgb(8,0,134);
+   color: white;
+   border: none;
+   border-radius: .2rem;
+}
+
+.button-secondary{
+    color:  rgb(8,0,134);
+    background-color: white;
+    border: 2px solid rgb(8,0,134);
+    border-radius: .2rem;
+}
+
+
+.button-primary-disabled{
+    background-color:  gray;
+    color: white;
+    border:none;
+    border-radius: .2rem;
+ }
+
+
+.button-secondary-disabled{
+    color:  gray;
+    background-color: white;
+    border: 2px solid gray; 
+    border-radius: .2rem;
+}
