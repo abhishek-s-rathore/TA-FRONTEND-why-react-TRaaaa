@@ -1,0 +1,91 @@
+@import url('./reset.css');
+
+/* Custom Styles */
+
+.container{
+    max-width: 1080px;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-coloum{
+  flex-direction: column;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.align-center{
+    align-items: center;
+}
+
+
+.color-container{
+    display: inline-block;
+    padding: .5rem;
+}
+
+.color-box{
+
+    background-color: #9ca3af;
+    width: 150px;
+    height: 50px;
+    border-radius: .3rem;
+}
+
+.color-container p{
+    margin-top: .5rem;
+    padding: 0 .1rem;
+}
+
+.color-weight{
+    color:black;
+    font-weight: 600;
+}
+
+.color-code{
+    color: rgb(100, 100, 100);
+}
+
+.shade{
+    border: 1px solid gray;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.flex-15{
+    flex: 0 1 15%;
+}
+
+.flex-84{
+    flex: 0 1 84%;
+}
+
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    color:rgb(60, 60, 60);
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
